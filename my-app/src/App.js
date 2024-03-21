@@ -1,18 +1,18 @@
-// src/App.js
-import React from 'react';
+import { Box } from '@mui/material';
 import Header from './components/Header';
 import Content from './components/Content';
-import { CssBaseline, Container } from '@mui/material';
+import Footer from './components/Footer';
 
 function App() {
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <Container maxWidth="lg">
-        <Header />
+    <Box display="flex" flexDirection="column" minHeight="100vh">
+      <Header />
+      <img src={`${process.env.PUBLIC_URL}/images/header-image.jpg`} alt="Header" />
+      <Box mt={4} mb={4}> {/* ここでBoxを使ってマージンを追加 */}
         <Content />
-      </Container>
-    </React.Fragment>
+      </Box>
+      <Footer />
+    </Box>
   );
 }
 
