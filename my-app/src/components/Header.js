@@ -1,5 +1,5 @@
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { AppBar, Toolbar, Typography } from '@mui/material';
+import { AppBar, Toolbar, Typography, Box } from '@mui/material';
 import PropTypes from 'prop-types';
 import Link from '@mui/material/Link';
 
@@ -61,6 +61,17 @@ function Header(props) {
       ))}
     </Toolbar>
   </AppBar>
+  <Box
+    component="img"
+    sx={{
+      mt: 5,
+      width: '100%', // 画像を画面幅いっぱいに広げる
+      height: 200, // 画像の高さを指定
+      objectFit: 'cover', // 画像のサイズを調整してBoxにフィットさせる
+    }}
+    src={`${process.env.PUBLIC_URL}/images/header-image.jpg`}
+    alt="ページのバナー"
+   />
   </ThemeProvider>
   );
 }
