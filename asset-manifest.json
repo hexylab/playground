@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/playground/static/js/main.d7adb466.js",
+    "main.js": "/playground/static/js/main.c90a33fa.js",
     "index.html": "/playground/index.html",
-    "main.d7adb466.js.map": "/playground/static/js/main.d7adb466.js.map"
+    "main.c90a33fa.js.map": "/playground/static/js/main.c90a33fa.js.map"
   },
   "entrypoints": [
-    "static/js/main.d7adb466.js"
+    "static/js/main.c90a33fa.js"
   ]
 }
