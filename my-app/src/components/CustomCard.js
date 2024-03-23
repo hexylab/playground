@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardActionArea, CardActions, CardContent, CardMedia, Typography, Button, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from '@mui/material';
+import { Card, CardActionArea, CardActions, CardContent, CardMedia, Typography, Button, Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material';
 
 function CustomCard({ title, description, detail, url, imageUrl }) {
   const [open, setOpen] = useState(false);
@@ -13,12 +13,20 @@ function CustomCard({ title, description, detail, url, imageUrl }) {
   };
 
   const handleCardClick = () => {
-    //window.location.href = url;
     window.open(url, '_blank');
   };
 
+  // detailテキスト内の改行を処理してレンダリング
+  const renderDetailText = (detailText) => {
+    return detailText.split('\n').map((line, index) => (
+      <Typography key={index} component="p" variant="body2">
+        {line}
+      </Typography>
+    ));
+  };
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, minHeight: 300}}>
       <CardActionArea onClick={handleCardClick}>
         <CardMedia
           component="img"
@@ -26,7 +34,7 @@ function CustomCard({ title, description, detail, url, imageUrl }) {
           image={imageUrl}
           alt={title}
         />
-        <CardContent>
+        <CardContent  sx={{ minHeight: 100 }}>
           <Typography gutterBottom variant="h5" component="div">
             {title}
           </Typography>
@@ -37,15 +45,13 @@ function CustomCard({ title, description, detail, url, imageUrl }) {
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary" onClick={handleOpen}>
-          ChatGPTコマンド
+          ChatGPTプロンプト
         </Button>
       </CardActions>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>{title}</DialogTitle>
+        <DialogTitle>ChatGPTプロンプト</DialogTitle>
         <DialogContent>
-          <DialogContentText>
-            {detail}
-          </DialogContentText>
+          {renderDetailText(detail)}
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary" autoFocus>

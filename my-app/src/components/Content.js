@@ -6,6 +6,24 @@ import { Divider, Grid  } from '@mui/material';
 
 const cards = [
   { 
+    title: 'プロフィールページ', 
+    description: '自分のプロフィールページをChatGPTに作成させてみました', 
+    detail: `自分のことを紹介するWebページをHTMLファイル１つで作成してください。
+    以下の要件に従ってください
+    
+    要件"""
+    ・紹介したい人の名前は"へくしる"としてください
+    ・ページタイトルは自分の名前を使ったタイトルとしてください
+    ・自分のことを説明する概要のセクションを作成してください
+    ・概要のセクションには"モノづくりが好きであり、プログラミングをしたりそれをインターネットに発信することが趣味である"ことを説明する文章を記述してください
+    ・TwitterとYoutubeのリンクを掲載するセクションを作成してください
+    ・Twitterリンクは<https://twitter.com/hexylab>、Youtubeリンクは<https://www.youtube.com/channel/UCuKsxWxgMiDr_-XVRd0-65A>としてください
+    ・デザインは自分のことを連想させるものとしてください
+    """`,     
+    url: `${process.env.PUBLIC_URL}/htmls/profile.html`, 
+    imageUrl: `${process.env.PUBLIC_URL}/images/profile.jpeg` 
+  },
+  { 
     title: 'テスト', 
     description: 'テスト用のページ', 
     detail: 'テスト用の簡素なhtmlファイルを作成してください', 
@@ -29,7 +47,7 @@ function Content() {
       <Typography variant="body1" paragraph marginTop={2}>
         ChatGPTに作成させたWebアプリケーションです。<br/>
         カードをクリックすると別のタブでChatGPTが作成したままのページが開きます。<br/>
-        カード下部の"CHATGPTコマンド"をクリックするとChatGPTに依頼したスクリプト文が表示されます。
+        カード下部の"CHATGPTプロンプト"をクリックするとChatGPTに依頼したスクリプト文が表示されます。
       </Typography>
 
       <Box mt={2}>

@@ -5,7 +5,7 @@ import Content from './components/Content';
 import Profile from './components/Profile';
 
 const sections = [
-  { title: 'Home', url: '/' },
+  { title: 'Home', url: 'https://hexylab.github.io/playground/' },
   { title: 'Content', url: '#content' },
   { title: 'Profile', url: '#profile' },
 ];
