@@ -6,8 +6,26 @@ import { Divider, Grid  } from '@mui/material';
 
 const cards = [
   { 
+    title: 'テトリス', 
+    description: 'ゲームのテトリスをChatGPTに作成させてみた', 
+    detail: `HTMLファイル１つとjavascriptファイル１つを用いて完全に動作するテトリスを作成してください
+    以下の要件に従ってください
+    
+    要件"""
+    ・完全な実装とすること
+    ・テトリスに出現するブロックの種類がランダムで落ちてくるようにすること
+    ・ブロックは種類ごとに別の色で表示すること
+    ・十字キーの左右でブロックを移動させ、上でブロックを回転させること
+    ・消せたラインをスコアとして表示すること
+    ・最上段まで行くとゲームオーバーと表示すること
+    ・htmlファイルとjavascriptファイルは同じフォルダに配置してあることを前提とすること
+    """`,     
+    url: `${process.env.PUBLIC_URL}/htmls/tetris/tetris.html`, 
+    imageUrl: `${process.env.PUBLIC_URL}/images/tetris.jpeg` 
+  },
+  { 
     title: 'プロフィールページ', 
-    description: '自分のプロフィールページをChatGPTに作成させてみました', 
+    description: '自分のプロフィールページをChatGPTに作成させてみた', 
     detail: `自分のことを紹介するWebページをHTMLファイル１つで作成してください。
     以下の要件に従ってください
     
@@ -46,7 +64,7 @@ function Content() {
       {/* 説明文 */}
       <Typography variant="body1" paragraph marginTop={2}>
         ChatGPTに作成させたWebアプリケーションです。<br/>
-        カードをクリックすると別のタブでChatGPTが作成したままのページが開きます。<br/>
+        カードをクリックすると別のタブでChatGPTが作成したアプリを確認することができます。<br/>
         カード下部の"CHATGPTプロンプト"をクリックするとChatGPTに依頼したスクリプト文が表示されます。
       </Typography>
 
